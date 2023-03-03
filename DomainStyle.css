@@ -1,11 +1,38 @@
-body .DomainBody {
+/* 폰트 통일 */
+body { 
+    font-family: cursive;
+}
+
+/* 도메인 배경 */
+.DomainBody {
     background-image: url("MySchoolBlackAndWhite.png");
     background-size: 100% 100%;
 }
 
-body .ContentsBody {
-    background-image: url("MySchool.png");
+/* 내용페이지 레이아웃 및 배경*/
+.ContentsBody {
+    margin:0;
+    padding:0;
+    background-image: url("sky.jpg");
     background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-rows: 1fr 7fr 1fr;
+}
+
+/* 내용과 NAV 란 나누기 위해 자식으로 하나더 그리드 만듬 */
+.contentgrid {
+    display: grid;
+    grid-template-columns: 300px 3fr;
+    margin: 10px;
+}
+
+/* 내용페이지배경 내용란 뒷배경 */
+#navigation > #backoposity {
+    background-color: black;
+    opacity: 0.2;
+    position:relative;
 }
 
 /* 조건문이 없으면 상속 개념을 사용하면 되지 않을까? => 그냥 id class만 써도? */
@@ -13,22 +40,37 @@ a {
     color:black;  
     text-decoration: none;
 }
+/* #navigation {
+position:inherit;
 
+} */
+
+/* 왜 텍스트가 안될까? 했더니 id opcity이고 navigation은 클래스였다. */
+
+/* 기본 */
+a#navigation:link { 
+    color: olive; } 
+/* 마우스 위 */
+a#navigation:hover {
+     color: coral; }
+
+ /* 클릭시 */
+a#navigation:active {
+     color: khaki; }
+
+/* 도메인 글자 */
 .fade {
-    font-family: cursive;
     text-align: center;
     font-weight: 700;
     font-size: 300%;
     animation: fadein 4s;
     -moz-animation: fadein 4s;
-    /* Firefox */
     -webkit-animation: fadein 4s;
-    /* Safari and Chrome */
     -o-animation: fadein 4s;
-    /* Opera */
 }
 
-/* animation */
+/* 브라우저마다 keyframe 인듯 */
+/* 투명도 점차 증가하는 애니메이션 만듬 */
 @keyframes fadein {
     from {
         opacity: 0;
@@ -39,10 +81,9 @@ a {
     }
 }
 
-/* 이건 설명대로 브라우저마다 keyframe 인듯 */
+/* Firefox 프레임 */
 @-moz-keyframes fadein {
 
-    /* Firefox */
     from {
         opacity: 0;
     }
@@ -52,9 +93,9 @@ a {
     }
 }
 
+/* Safari and Chrome */
 @-webkit-keyframes fadein {
 
-    /* Safari and Chrome */
     from {
         opacity: 0;
     }
@@ -64,9 +105,9 @@ a {
     }
 }
 
+/* Opera */
 @-o-keyframes fadein {
 
-    /* Opera */
     from {
         opacity: 0;
     }
@@ -76,16 +117,9 @@ a {
     }
 }
 
-/* grid를 사용하여 세로 정렬 */
-
+/* 도메인 grid를 사용하여 세로 정렬 */
 .momgrid {
     display: grid;
     place-items: center;
-    min-height: 100vh;
-}
-
-.GridContain {
-    display: grid;
-    -ms-grid-column-align : 10% 20% 50% 1fr;
     min-height: 100vh;
 }
