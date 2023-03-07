@@ -65,30 +65,39 @@ a:active {
 /* 너무너무 허전해서 내용 프레임 넣음 */
 .contentgrid #RealContent {
     background-image: url(ContentsFrame.png);
-    background-size: 65vw 110vh;
+    background-size: 90% 100%;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 7vh;
     padding-bottom: 7vh;
     padding-left: 7vw;
     padding-right: 7vw;
+    position: relative;
     /* place-items: center; */
 }
 
+.headerline {
+    text-align:center; font-size:150%; font-weight:700;
+}
+
+#RealContent h1 {
+    font-size: 30px;
+border-bottom: 3px;
+border-bottom-style:solid;
+}
+
 div #RealContent {
+    /* position: relative; */
     text-align: center;
-    font-size: 200%;
+    font-size: 150%;
     font-weight: bold;
     line-height: 10vh;
 }
 
-.whycontent > #RealContent li {
-    line-height: 100px;
-}
-
 .whycontent {
-    line-height: 50px;
-}
+    line-height: 10vh;
+    font-size: 80%;
+} 
 
 .likecontents {
     display: grid;
@@ -126,11 +135,6 @@ div #RealContent {
     height: 10vh;
     width: 10vw;
     place-items: center;
-}
-
-#RealContent h1 {
-border-bottom: 6px;
-border-bottom-style:solid;
 }
 
 /* navigation grid 설정 */
@@ -180,6 +184,30 @@ border-bottom-style:solid;
         width: 17%;
         bottom: -13px;
     }
+
+    div #RealContent {
+        /* position: relative; */
+        text-align: center;
+        font-size: 200%;
+        font-weight: bold;
+        line-height: 10vh;
+    }
+    
+    .whycontent {
+        line-height: 10vh;
+        font-size: 110%;
+    }
+
+    #RealContent h1 {
+        font-size: 170%;
+        border-bottom: 6px;
+        border-bottom-style:solid;
+        }
+
+        .headerline {
+            text-align:center; font-size:230%; font-weight:700;
+        }
+
 }
 
 /* 마우스 위 */
