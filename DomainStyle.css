@@ -42,7 +42,6 @@ a:active {
 }
 
 
-
 /* contents =>*/
 
 /* 내용페이지 레이아웃 및 배경*/
@@ -52,8 +51,6 @@ a:active {
     background-image: url("sky.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
     display:grid;
     grid-template-rows: 1fr 7fr 1fr;
 }
@@ -68,20 +65,29 @@ a:active {
 /* 너무너무 허전해서 내용 프레임 넣음 */
 .contentgrid #RealContent {
     background-image: url(ContentsFrame.png);
-    background-size: 65vw 65vh;
+    background-size: 65vw 110vh;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 7vh;
     padding-bottom: 7vh;
     padding-left: 7vw;
     padding-right: 7vw;
+    /* place-items: center; */
 }
 
 div #RealContent {
     text-align: center;
-    font-size:x-large;
+    font-size: 200%;
     font-weight: bold;
-    line-height: 7vh;
+    line-height: 10vh;
+}
+
+.whycontent > #RealContent li {
+    line-height: 100px;
+}
+
+.whycontent {
+    line-height: 50px;
 }
 
 .likecontents {
