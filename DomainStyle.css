@@ -1,38 +1,6 @@
 /* 폰트 통일 */
-body { 
-    font-family: cursive;
-}
-
-/* 도메인 배경 */
-.DomainBody {
-    background-image: url("MySchoolBlackAndWhite.png");
-    background-size: 100% 100%;
-}
-
-/* 내용페이지 레이아웃 및 배경*/
-.ContentsBody {
-    margin:0;
-    padding:0;
-    background-image: url("sky.jpg");
-    background-size: 100% 100%;
-    width: 100vw;
-    height: 100vh;
-    display:grid;
-    grid-template-rows: 1fr 7fr 1fr;
-}
-
-/* 내용과 NAV 란 나누기 위해 자식으로 하나더 그리드 만듬 */
-.contentgrid {
-    display: grid;
-    grid-template-columns: 300px 3fr;
-    margin: 10px;
-}
-
-/* 내용페이지배경 내용란 뒷배경 */
-#navigation > #backoposity {
-    background-color: black;
-    opacity: 0.2;
-    position:relative;
+body {
+    font-family: 'NanumSquare', sans-serif 
 }
 
 /* 조건문이 없으면 상속 개념을 사용하면 되지 않을까? => 그냥 id class만 써도? */
@@ -40,23 +8,20 @@ a {
     color:black;  
     text-decoration: none;
 }
-/* #navigation {
-position:inherit;
 
-} */
+a:hover {
+    color: skyblue; 
+   }
 
-/* 왜 텍스트가 안될까? 했더니 id opcity이고 navigation은 클래스였다. */
+/* 클릭시 */
+a:active {
+    color:  lightgreen; }
 
-/* 기본 */
-a#navigation:link { 
-    color: olive; } 
-/* 마우스 위 */
-a#navigation:hover {
-     color: coral; }
-
- /* 클릭시 */
-a#navigation:active {
-     color: khaki; }
+/* 도메인 배경 */
+.DomainBody {
+    background-image: url("MySchoolBlackAndWhite.png");
+    background-size: 100% 100%;
+}
 
 /* 도메인 글자 */
 .fade {
@@ -68,6 +33,157 @@ a#navigation:active {
     -webkit-animation: fadein 4s;
     -o-animation: fadein 4s;
 }
+
+/* 도메인 grid를 사용하여 세로 정렬 */
+.momgrid {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+
+
+/* contents =>*/
+
+/* 내용페이지 레이아웃 및 배경*/
+.ContentsBody {
+    margin:0;
+    padding:0;
+    background-image: url("sky.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-rows: 1fr 7fr 1fr;
+}
+
+/* 내용과 NAV 란 나누기 위해 자식으로 하나더 그리드 만듬 */
+.contentgrid {
+    display: grid;
+    grid-template-columns: 25vw 3fr;
+    margin: 10px;
+}
+
+/* 너무너무 허전해서 내용 프레임 넣음 */
+.contentgrid #RealContent {
+    background-image: url(ContentsFrame.png);
+    background-size: 65vw 65vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+
+div #RealContent {
+    text-align: center;
+    font-size:x-large;
+    font-weight: bold;
+    line-height: 7vh;
+}
+
+.likecontents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "h1 h1"
+    "photo travel"
+    "paint military"
+    ;
+    text-align: center;
+}
+
+.h1 {
+    grid-area: h1;
+}
+
+.photo {
+    grid-area: photo;
+}
+
+.travel {
+    grid-area: travel;
+}
+
+.paint {
+    grid-area: paint;
+}
+
+.mili {
+    grid-area: military;
+}
+
+.likecontents img {
+    height: 10vh;
+    width: 10vw;
+    place-items: center;
+}
+
+#RealContent h1 {
+border-bottom: 6px;
+border-bottom-style:solid;
+}
+
+/* navigation grid 설정 */
+.navigrid {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(3,100px)/0;
+    margin: 10px;
+    vertical-align: middle;
+    place-items: center;
+}
+
+/* @media (min-width:768px){
+} */
+
+/* navigation font 와 이미지 관련 */
+
+#navigation {
+    font-size: 160%;
+    font-weight: bold;
+    margin: 5px;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+}
+
+#navigation img {
+    /* position: relative; */
+    margin-right: none ;
+    height: 17%; 
+    width: 17%;
+    bottom: -5px;
+}
+
+@media (min-width:768px){
+    
+    #navigation {
+        font-size: 220%;
+        font-weight: bold;
+        margin: 10px;
+    }
+    
+    #navigation img {
+        position: relative;
+        margin-right: 10px;
+        height: 17%; 
+        width: 17%;
+        bottom: -13px;
+    }
+}
+
+/* 마우스 위 */
+.navigrid a:hover {
+     color: coral; 
+    }
+
+ /* 클릭시 */
+.navigrid a:active {
+     color: khaki; }
 
 /* 브라우저마다 keyframe 인듯 */
 /* 투명도 점차 증가하는 애니메이션 만듬 */
@@ -117,9 +233,9 @@ a#navigation:active {
     }
 }
 
-/* 도메인 grid를 사용하여 세로 정렬 */
-.momgrid {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+/* footer */
+.footerlink {
+    position: relative;
+    left: 90vw;
+    bottom: 0.8vh;
 }

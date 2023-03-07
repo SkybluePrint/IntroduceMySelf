@@ -7,23 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JiHoonContentsPage</title>
     <link rel="stylesheet" href="DomainStyle.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 </head>
 
 <body class="ContentsBody">
+    <!-- line-height:7 font-size: 100%; -->
     <header>
-        <a href="Domain.html" style="font-size: 150%;"><img src="home.png" width="3%"></a>
-        <p style="text-align:center; font-size:200%; font-weight:700; margin-top: 0;" >하늘을 바라보기 시작한 하늘바라기</p> 
+        <a href="Domain.html" style="font-size: 40px; position: absolute; left: 1vw; top: 1vh;"><img src="home.png" height="40px" width="40px" style="position: relative; top: 5px;">Home</a>
+        <p style="text-align:center; font-size:230%; font-weight:700;">하늘을 바라보기 시작한 하늘바라기</p>
+        <!-- <audio controls src="FallingSky.mp3" style="right:10vw; position:absolute;"></audio> -->
     </header>
 
-    <div id="backoposity" class="contentgrid">
-        <nav id="backoposity">
-            <img src="flowerbutton.png" width="10%"><a id="navigation" href="aboutme.html">ABOUT ME</a>
-            <img src="flowerbutton.png" width="10%"><a id="navigation" href="why.html">WHY</a>
-            <img src="flowerbutton.png" width="10%"><a id="navigation" href="like.html">like</a>
+    <div class="contentgrid">
+        <nav class="navigrid">
+            <div id="navigation">
+                <a href="ContentsPage.html" ><img src="funflowerbutton.png">ABOUT ME</a>
+            </div>
+            <div id="navigation">
+                <a href="why.html"> <img src="funflowerbutton.png">WHY</a>
+            </div>
+            <div id="navigation">
+                <a href="like.html"><img src="funflowerbutton.png">like</a>
+            </div>
         </nav>
+
+        <div id="RealContent">
+            
+            <h1>ABOUT ME</h1>   
+            <li>이름 : 홍지훈</li>
+            <li>생년월일 : 98.07.09</li>
+            <li>거주지 : 경상남도 창원시</li>
+            <li>학교 / 전공 : 국립창원대학교 / 독어독문학과</li>
+            <li>목표 : WebFrontend</li>
+
+        </div>
+
     </div>
+
     
-    <footer> <a href="Domain.html"><img src="home.png" width="5%"></a></footer>
+    <footer>
+        <a href="https://velog.io/@skyflower"><img src="velog.png" class="footerlink" style="width: 35px; height: 35px; bottom: 13px"></a>
+        <a href="https://github.com/SkybluePrint"><img src="git.png" class="footerlink" style="width: 52px; height: 52px; "></a>
+    </footer>
 
 </body>
 
